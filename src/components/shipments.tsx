@@ -9,7 +9,7 @@ export function Shipments({
     refetch: () => void
 }) {
     const { shipments } = data
-    const { id, details, destination, origin, service, events, status } =
+    const { id, events, status } =
         shipments[0]
 
     return (
@@ -64,7 +64,10 @@ export function Shipments({
                                         {event.timestamp}
                                     </p>
                                     <p className=" text-sm mt-2">
-                                        {event?.location?.address?.addressLocality}
+                                        {
+                                            event?.location?.address
+                                                ?.addressLocality
+                                        }
                                     </p>
                                 </div>
                             </li>
