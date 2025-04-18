@@ -4,14 +4,14 @@ import { useState } from "react"
 import { useGetDhlShipmentQuery } from "./redux/states/shipment-slice"
 
 function App() {
-    console.log("render app")
+    // console.log("render app")
     const [inputValue, setInputValue] = useState<string>("")
     const [trackingNumber, setTrackingNumber] = useState<string>("")
     const { data, isLoading, isFetching, refetch, error } =
         useGetDhlShipmentQuery(trackingNumber, {
             skip: trackingNumber === "",
         })
-    console.log("---error----", error)
+    // console.log("---error----", error)
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         setInputValue("")
